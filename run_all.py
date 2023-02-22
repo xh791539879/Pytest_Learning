@@ -5,7 +5,7 @@ if __name__ == '__main__':  ##主函数执行测试用例，执行文件夹下�
         # 指定文件夹
         # pytest.main(['-vs','./testcaseα'])
         # 指定模块
-        pytest.main(['-vs','./testcaseα/test_zhang.py'])
+        # pytest.main(['-vs','./testcaseα/test_zhang.py'])
 
         #指定模块中的指定函数，
         # pytest.main(['-vs','./testcaseα/test_zhang.py::test_01_func'])
@@ -24,6 +24,9 @@ if __name__ == '__main__':  ##主函数执行测试用例，执行文件夹下�
         # -k un,只执行方法名中包含‘un’的用例
         # pytest.main(['-vs','./testcaseα/test_zhang.py','-k un'])
 
+        #通过打标记和配置文件，执行特定用例
+        # pytest.main(['-m user or smoke'])
+        pytest.main(['--html=./report/report.html'])
 
 
 
