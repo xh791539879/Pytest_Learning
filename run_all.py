@@ -1,3 +1,5 @@
+import os
+
 import pytest
 
 if __name__ == '__main__':  ##主函数执行测试用例，执行文件夹下的所有test_文件
@@ -26,7 +28,8 @@ if __name__ == '__main__':  ##主函数执行测试用例，执行文件夹下�
 
         #通过打标记和配置文件，执行特定用例
         # pytest.main(['-m user or smoke'])
-        pytest.main(['--html=./report/report.html'])
+        pytest.main(['./testcaseβ/user/test_user.py'])
+        os.system('allure generate ./temp -o ./report --clean')
 
 
 
