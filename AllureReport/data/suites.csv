@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Feb 27 13:11:26 CST 2023","Mon Feb 27 13:11:26 CST 2023","0","testcaseB","test_lan","TestLan01","","","test_lan_02[王五]",""
+"passed","Mon Feb 27 13:11:26 CST 2023","Mon Feb 27 13:11:26 CST 2023","0","testcaseB","test_lan","TestLan01","","","test_lan_01",""
+"passed","Mon Feb 27 13:11:26 CST 2023","Mon Feb 27 13:11:26 CST 2023","0","testcaseB","test_lan","TestLan01","","","test_lan_02[张三]",""
+"passed","Mon Feb 27 13:11:26 CST 2023","Mon Feb 27 13:11:26 CST 2023","0","testcaseB","test_lan","TestLan02","","","test_lan_05",""
+"passed","Mon Feb 27 13:11:26 CST 2023","Mon Feb 27 13:11:26 CST 2023","0","testcaseB","test_lan","TestLan01","","","test_lan_02[李四]",""
+"passed","Mon Feb 27 13:11:26 CST 2023","Mon Feb 27 13:11:26 CST 2023","1","testcaseB","test_lan","TestLan01","","","test_lan_03",""
+"passed","Mon Feb 27 13:11:26 CST 2023","Mon Feb 27 13:11:26 CST 2023","0","testcaseB","test_lan","TestLan02","","","test_lan_04",""

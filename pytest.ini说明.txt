@@ -1,0 +1,3 @@
+--self-contained-html #将css和html合并，只生成一个html报告
+--alluredir ./temp #生成json文件
+--html=./HtmlReport/report.html #指定目录，生成指定html报告
