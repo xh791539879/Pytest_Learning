@@ -9,7 +9,7 @@ class TestLiu:
     def setup_class(self):
         print('\n在类执行前初始化的工作，比如创建日志对象，连接数据库，创建接口的请求对象')
 
-    #在每个用力之前执行一次
+    #在每个用例之前执行一次
     def setup_method(self):
         print('\n在执行用例前执行的代码')
 

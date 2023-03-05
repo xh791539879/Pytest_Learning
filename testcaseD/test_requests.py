@@ -10,12 +10,15 @@ import re
 import warnings
 import requests
 
+from common.yaml_util import write_yaml
+from common.yaml_util import read_yaml
+
 
 class TestRequest:
     sess = requests.session()
 
     #定义全局变量（类变量）
-    tokencode = ''
+    # tokencode = ''
 
     # 忽略证书验证
     warnings.filterwarnings("ignore")
@@ -34,14 +37,15 @@ class TestRequest:
         # print(response.text)
         #正则表达式截取tokencode
         token = re.search(r'"tokenCode":"(.*?)","isOneLogin"',response.text)
+        write_yaml({"tokencode": token.group(1)})
         # print(token.group(1))#group（）表示输入正则表达式整体，（1）输出第一个括号内
-        TestRequest.tokencode =token.group(1) #将截取道德tokencode传给全局变量
+        # TestRequest.tokencode =token.group(1) #将截取道德tokencode传给全局变量
 
         #新疆招聘平台，获得我的报名列表信息
     def test_post_myapplicationlist(self):
         url = "https://ks-test.yxlearning.com/api/base/apply-entity/find-apply.gson"
         headers = {
-            "token": TestRequest.tokencode  #调用全局变量
+            "token": read_yaml("tokencode") #调用yaml配置文件中的全局变量
         }
         response = requests.post(url=url,headers=headers)
         print(response.json())
@@ -50,7 +54,7 @@ class TestRequest:
     def test_post_updateinfo(self):
         url = "https://ks-test.yxlearning.com/api/base/account/update-personal-info.gson"
         headers = {
-            "token": TestRequest.tokencode  #调用全局变量
+            "token": read_yaml("tokencode")  #调用全局变量
         }
         data = {
             "accountExtInfoId": "1622766434819719170", "userName": "辛3", "cardNum": "150302202301298777", "gender": 1,
@@ -84,7 +88,7 @@ class TestRequest:
     def test_post_myorderlist(self):
         url = "https://ks-test.yxlearning.com/api/base/order-entity/find-order.gson"
         headers = {
-            "token": TestRequest.tokencode
+            "token": read_yaml("tokencode")
         }
         response = requests.request(method="post",url=url,headers=headers)
         print(response.json())
@@ -123,10 +127,10 @@ class TestRequest:
 
 
 if __name__ == '__main__':
-    # TestRequest().test_get_token()
+    TestRequest().test_get_token()
     # TestRequest().test_post_myapplicationlist()
     # TestRequest().test_post_updateinfo()
     # TestRequest().test_post_myorderlist()
     # TestRequest().test_upload()
-    TestRequest().test_login()
+    # TestRequest().test_login()
     # TestRequest().test_myexam()
