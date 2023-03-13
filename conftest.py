@@ -10,12 +10,11 @@ def pytest_configure(config):
     # 删除Java_Home
     config._metadata.pop("JAVA_HOME")
 
-
-@pytest.fixture(scope="function")
-def exe_sql():
-    print("全局,用例执行之前")
+@pytest.fixture(scope="function",name='login')
+def login_exe():
+    print('\r\n'"登录")
     yield
-    print("全局,用例执行之后")
+    print("退出登录")
 
 
 @pytest.fixture(scope="session",autouse=True)   # 在所有的接口请求之前执行清空yaml的文件内容,autouse=True 自动执行

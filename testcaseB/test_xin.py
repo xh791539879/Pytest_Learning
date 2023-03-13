@@ -9,18 +9,21 @@
 """
 import pytest
 
-@pytest.fixture(scope='class',autouse=True)
-def my_fixture():
-    print('\n这是前置方法，可以实现部分以及全部测试用例前置')
-    yield
-    print('\n这是后置方法，可以实现部分以及全部测试用例后置')
+from common.common_util import Common_Util
 
-class TestXin01:
+
+# @pytest.fixture(scope='class',autouse=True)
+# def my_fixture():
+#     print('\n这是前置方法，可以实现部分以及全部测试用例前置')
+#     yield
+#     print('\n这是后置方法，可以实现部分以及全部测试用例后置')
+
+class TestXin01(Common_Util): # 导入common中的工具包，引入前置后置。就不需要在每个用例类中写前置后置方法。
 
     def test_xin_01(self):
         print('\n这是test_xin01')
 
-    def test_xin_02(self):#在此处引用
+    def test_xin_02(self):
         print('\n这是test_xin02')
 
     def test_xin_03(self):

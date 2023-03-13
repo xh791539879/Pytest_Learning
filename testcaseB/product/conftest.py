@@ -1,8 +1,9 @@
 import pytest
 
-
-@pytest.fixture(params=['abc','def','ghi'])
-def product_fixture(request):
-    print('\n商品管理前置')
+def read_yaml():
+    return['显示器','键盘','鼠标']
+@pytest.fixture(scope="function",autouse=False,params=read_yaml(),ids=['product01','product02','product03'],name="product")
+def product_exe(request):
+    print("前置条件、操作")
     yield request.param
-    print('\n商品管理后置')
+    print('\r\n'"关闭")
