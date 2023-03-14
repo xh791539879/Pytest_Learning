@@ -1,8 +1,13 @@
 ﻿"""
+@pytest.fixture()装饰器实现部分用例前后置
+(1)scope表示的是被@pytest.fixture标记的方法的作用域。function(默认)，class类， module模块，package/session包.
+(2)params：参数化（支持，列表[]，元组()，字典列表[{},{},{}]，字典元组({},{},{})
+(3)autouse=True：自动使用，默认False
+
 fixture 方法级别‘function’，使用方法
 """
-import pytest
 
+import pytest
 
 @pytest.fixture(scope="function",autouse=False)
 def exe_database_sql():

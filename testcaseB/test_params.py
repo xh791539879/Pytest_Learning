@@ -1,8 +1,8 @@
 ﻿"""
 params 实现数据驱动，
 代码逻辑为：params传值给request，request将其打印
-
-ids(次要),重新定义变量名
+ids：当使用params参数化时，给每一个值设置一个变量名。意义不大。
+name：给表示的是被@pytest.fixture标记的方法取一个别名。当取了别名之后，那么原来的名称就用不了了
 """
 import pytest
 

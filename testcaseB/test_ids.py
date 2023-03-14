@@ -4,8 +4,6 @@ name ：将fixture下的方法重命名，重命名后前者失效
 """
 import pytest
 
-import sys
-type = sys.getfilesystemencoding()
 def read_yaml():
     return ['zhangsan','lisi','wangwu']
 

@@ -4,7 +4,6 @@
 但是需要和运行的用例放到同一层级。
 """
 
-import pytest
 
 class TestGuo01:
 

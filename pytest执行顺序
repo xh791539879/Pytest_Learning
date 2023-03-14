@@ -1,0 +1,5 @@
+﻿1.查询当前目录下的conftest
+2.查询当前目录下的pytest.ini文件
+3.查询用例目录下的conftest文件
+4.查询用例文件中是否包含setup-teardown
+5.根据pytest中执行规则进行执行
