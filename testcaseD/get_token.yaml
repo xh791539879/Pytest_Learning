@@ -1,9 +1,12 @@
-﻿user:    #层级关系
-  - 01:  #此处不能有值
-    - name: 张三
-    - age: 13
-  - name: 李四
-  - name: 王五
-
-
-sex: 女
+﻿-
+  name: 登录获得token
+  request:
+    method: get
+    url: https://ks-test.yxlearning.com/api/cms/login.gson
+    data:
+      callback: jQuery36009903474698827432_1677220399725
+      account: MTUwMzAyMjAyMzAxMjk4Nzc3
+      password: YWJjMTIzNDU2
+      roleType: 4
+      _: 1677220399728
+  validate: None

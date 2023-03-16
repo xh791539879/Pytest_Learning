@@ -1,7 +1,10 @@
-﻿
+﻿import re
+
 import pytest
+import requests
 
 from common.common_util import Common_Util
+from common.yaml_util import read_yaml, write_yaml
 
 
 # class TestApi(Common_Util):
@@ -14,7 +17,17 @@ from common.common_util import Common_Util
 
 
 #可以传多个值
-class TestApi02(Common_Util):
-    @pytest.mark.parametrize('arg1,arg2',[['name', '张三'], ['age', '6']])
-    def test_api_01(self,arg1,arg2):
-        print("测试接收到的数据为："+str(arg1)+" "+str(arg2))
+class TestApi02():
+    sess = requests.session()
+    @pytest.mark.parametrize('caseinfo',read_yaml('testcaseD/get_token.yaml'))
+    def test_api_01(self,caseinfo):
+        print("测试接收到的数据为：")
+        name = caseinfo['name']
+        method = caseinfo['request']['method']
+        url = caseinfo['request']['url']
+        data = caseinfo['request']['data']
+        validate = caseinfo['request']['data']
+
+        response = TestApi02.sess.request(method=method,url=url,params=data)
+        token = re.search(r'"tokenCode":"(.*?)","isOneLogin"', response.text)
+        write_yaml({"tokencode": token.group(1)})
