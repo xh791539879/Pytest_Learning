@@ -20,14 +20,30 @@ from common.yaml_util import read_yaml, write_yaml
 class TestApi02():
     sess = requests.session()
     @pytest.mark.parametrize('caseinfo',read_yaml('testcaseD/get_token.yaml'))
-    def test_api_01(self,caseinfo):
-        print("测试接收到的数据为：")
+    def test_login(self,caseinfo):
         name = caseinfo['name']
         method = caseinfo['request']['method']
         url = caseinfo['request']['url']
         data = caseinfo['request']['data']
-        validate = caseinfo['request']['data']
+        validate = caseinfo['validate']
 
         response = TestApi02.sess.request(method=method,url=url,params=data)
+        assert "token" in response.text   #断言响应结果是否包含特地字段
         token = re.search(r'"tokenCode":"(.*?)","isOneLogin"', response.text)
-        write_yaml({"tokencode": token.group(1)})
+        write_yaml('/extract.yaml',str(token.group(1)))
+
+    @pytest.mark.parametrize('caseinfo', read_yaml('testcaseD/report_list.yaml'))
+    def test_repoet_list(self, caseinfo):
+        name = caseinfo['name']
+        method = caseinfo['request']['method']
+        url = caseinfo['request']['url']
+        data = read_yaml('/extract.yaml')
+        validate = caseinfo['validate']
+        response = TestApi02.sess.request(method=method, url=url, json=data)
+        yaml = read_yaml('/extract.yaml')
+        print(yaml)
+        print(response.json())
+
+
+
+

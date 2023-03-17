@@ -17,8 +17,8 @@ def read_yaml(yamlpath):
         value = yaml.load(stream=f, Loader=yaml.FullLoader)
         return value
 #写入
-def write_yaml(data):
-    with open('../extract.yaml',mode='a',encoding='utf-8')as f:
+def write_yaml(yamlpath,data):
+    with open(get_obj_path() + yamlpath,mode='a',encoding='utf-8')as f:
         yaml.dump(data,stream=f,allow_unicode=True)
 
 #清空
