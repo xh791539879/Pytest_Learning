@@ -20,6 +20,9 @@ def pytest_html_results_summary(prefix):
     prefix.extend([html.p("测试人员: xinhang")])
 # ------------------------------------------------------------------------
 
+
+
+#-------------------------------------------------------------------------
 #session级别的方法
 @pytest.fixture(scope="session",autouse=False)
 def all_exe():
@@ -42,8 +45,8 @@ def login_exe():
 
 
 
-@pytest.fixture(scope="session",autouse=False)   # 在所有的接口请求之前执行清空yaml的文件内容,autouse=True 自动执行
-def clean_extract():
+@pytest.fixture(scope="session",autouse=False)   # 接口请求之前执行清空yaml的文件内容,autouse=True 自动执行
+def clean_extract():                             #在需要执行的方法后调用此函数
     clean_yaml('extract.yaml')
 
 

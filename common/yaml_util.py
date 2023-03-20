@@ -26,5 +26,5 @@ def clean_yaml(yamlpath):
     with open(get_obj_path() + yamlpath,mode='w',encoding='utf-8')as f:
         f.truncate()
 
-if __name__ == '__main__':
-    print(clean_yaml('extract.yaml'))
+# if __name__ == '__main__':
+#     print(clean_yaml('extract.yaml'))
