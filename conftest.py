@@ -44,7 +44,7 @@ def login_exe():
 
 @pytest.fixture(scope="session",autouse=False)   # 在所有的接口请求之前执行清空yaml的文件内容,autouse=True 自动执行
 def clean_extract():
-    clean_yaml()
+    clean_yaml('extract.yaml')
 
 
 

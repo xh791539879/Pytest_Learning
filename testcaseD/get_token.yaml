@@ -9,7 +9,7 @@
       password: YWJjMTIzNDU2
       roleType: 4
       _: 1677220399728
-  validate: assert "token" in response.text
+  validate: tokenCode
 
 #-
 #  name: 登录获得token  -反例,account为空

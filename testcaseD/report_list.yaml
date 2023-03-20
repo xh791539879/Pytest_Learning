@@ -5,4 +5,4 @@
     url: https://ks-test.yxlearning.com/api/base/order-entity/find-order.gson
     data:
 
-  validate: assert "token" in response.text
+  validate: 获取成功

@@ -22,9 +22,9 @@ def write_yaml(yamlpath,data):
         yaml.dump(data,stream=f,allow_unicode=True)
 
 #清空
-def clean_yaml():
-    with open('../extract.yaml',mode='w',encoding='utf-8')as f:
+def clean_yaml(yamlpath):
+    with open(get_obj_path() + yamlpath,mode='w',encoding='utf-8')as f:
         f.truncate()
 
 if __name__ == '__main__':
-    print(read_yaml('testcaseD/get_token.yaml'))
+    print(clean_yaml('extract.yaml'))
