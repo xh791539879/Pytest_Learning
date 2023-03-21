@@ -1,0 +1,10 @@
+﻿-
+  name: 上传文件  -正例
+  request:
+    method: post
+    url: https://ks-test.yxlearning.com/file-system/tools/uploadImg.do
+    headers:
+      Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryGfl7uVhK8Zh7xbxu
+    data:
+      filename: r"file/01.png"
+  validate: True

@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 import os
 
 import pytest
@@ -29,7 +29,7 @@ if __name__ == '__main__':  ##主函数执行测试用例，执行文件夹下�
 
         #通过打标记和配置文件，执行特定用例
         # pytest.main(['-m user or smoke'])
-        pytest.main(['testcaseD/test_api.py'])
+        pytest.main()
         os.system('allure generate ./temp -o ./AllureReport --clean')
 
 
