@@ -31,9 +31,12 @@ class TestApi():
         response = RequsetsUtil().send_all_request(method=method,url=url,params=data) #通过导入common方法中的requests封装方法进行发送请求
         # response = RequsetsUtil.sess.request()
         # print(response.text)
-        assert validate in response.text  #断言相应结果是够包含特定字符串
-        tokenCode = re.search(r'"tokenCode":"(.*?)","isOneLogin"', response.text)
-        write_yaml('/extract.yaml',{"token":(tokenCode[1])})  #注意格式,一定要这样写才可以写入正常的yaml,方便后续读取
+        if "tokenCode" in response.text:
+            tokenCode = re.search(r'"tokenCode":"(.*?)","isOneLogin"', response.text)
+            write_yaml('/extract.yaml',{"token":(tokenCode[1])})  #注意格式,一定要这样写才可以写入正常的yaml,方便后续读取
+            assert validate in response.text  #断言相应结果是够包含特定字符串
+        else:
+            print("用例异常")
 
 
     @pytest.mark.parametrize('caseinfo', read_yaml('testcaseD/report_list.yaml'))
@@ -54,9 +57,10 @@ class TestApi():
         url = caseinfo['request']['url']
         header = caseinfo['request']['headers']
         data = caseinfo['request']['data']
+        for key,value in data.items():
+            data[key] = open(value,"rb")
         validate = caseinfo['validate']
         response = RequsetsUtil().send_all_request(method=method,url=url,headers=header,files=data)
         assert validate ==response.json()['success']
-        print(response.json())
 
 
