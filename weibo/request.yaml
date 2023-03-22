@@ -1,0 +1,11 @@
+﻿-
+  name: 测试   -正例
+  request:
+    method: get
+    url: http://10.85.93.234:58881/api/big_hot?tab=0&page_number=1&page_size=10&trend_word=网红狗艾特去世
+    data:
+      tab:0
+      page_number:1
+      page_size:10
+      trend_word:"网红狗艾特去世"
+  validate: code

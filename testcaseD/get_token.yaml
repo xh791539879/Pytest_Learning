@@ -11,41 +11,41 @@
       _: 1677220399728
   validate: tokenCode
 
-#-
-#  name: 登录获得token  -反例,account为空
-#  request:
-#    method: get
-#    url: https://ks-test.yxlearning.com/api/cms/login.gson
-#    data:
-#      callback: jQuery36009903474698827432_1677220399725
-#      account: None
-#      password: YWJjMTIzNDU2
-#      roleType: 4
-#      _: 1677220399728
-#  validate: assert "token" in response.text
-#
-#-
-#  name: 登录获得token  -反例,password为空
-#  request:
-#    method: get
-#    url: https://ks-test.yxlearning.com/api/cms/login.gson
-#    data:
-#      callback: jQuery36009903474698827432_1677220399725
-#      account: MTUwMzAyMjAyMzAxMjk4Nzc3
-#      password: None
-#      roleType: 4
-#      _: 1677220399728
-#  validate: assert "token" in response.text
-#
-#-
-#  name: 登录获得token  -反例,roletype为空
-#  request:
-#    method: get
-#    url: https://ks-test.yxlearning.com/api/cms/login.gson
-#    data:
-#      callback: jQuery36009903474698827432_1677220399725
-#      account: MTUwMzAyMjAyMzAxMjk4Nzc3
-#      password: YWJjMTIzNDU2
-#      roleType: None
-#      _: 1677220399728
-#  validate: assert "token" in response.text
+-
+  name: 登录获得token  -反例,account为空
+  request:
+    method: get
+    url: https://ks-test.yxlearning.com/api/cms/login.gson
+    data:
+      callback: jQuery36009903474698827432_1677220399725
+      account: None
+      password: YWJjMTIzNDU2
+      roleType: 4
+      _: 1677220399728
+  validate: tokenCode
+
+-
+  name: 登录获得token  -反例,password为空
+  request:
+    method: get
+    url: https://ks-test.yxlearning.com/api/cms/login.gson
+    data:
+      callback: jQuery36009903474698827432_1677220399725
+      account: MTUwMzAyMjAyMzAxMjk4Nzc3
+      password: None
+      roleType: 4
+      _: 1677220399728
+  validate: tokenCode
+
+-
+  name: 登录获得token  -反例,roletype为空
+  request:
+    method: get
+    url: https://ks-test.yxlearning.com/api/cms/login.gson
+    data:
+      callback: jQuery36009903474698827432_1677220399725
+      account: MTUwMzAyMjAyMzAxMjk4Nzc3
+      password: YWJjMTIzNDU2
+      roleType: None
+      _: 1677220399728
+  validate: tokenCode

@@ -7,12 +7,13 @@ from common.yaml_util import clean_yaml
 
 # --------------------------------------------------------------------
 # 修改html报告格式，如果出现中文报错，修改html-report源码
-def pytest_configure(config):
-    # 添加接口地址与项目名称
-    config._metadata["项目名称"] = "新疆招聘测试项目"
-    config._metadata['接口地址'] = 'https://ks-test.yxlearning.com/'
-    # 删除Java_Home
-    config._metadata.pop("JAVA_HOME")
+# def pytest_configure(config):
+#     # 添加接口地址与项目名称
+#     config._metadata["项目名称"] = "新疆招聘测试项目"
+#     config._metadata['接口地址'] = 'https://ks-test.yxlearning.com/'
+#     # 删除Java_Home
+#     config._metadata.pop("JAVA_HOME")
+
 
 @pytest.hookimpl(optionalhook=True,tryfirst=True)
 def pytest_html_results_summary(prefix):
