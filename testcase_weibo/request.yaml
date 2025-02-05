@@ -1,0 +1,38 @@
+﻿-
+  name: 网红狗艾特去世 -正例
+  request:
+    method: get
+    url: http://10.85.93.234:58881/api/big_hot
+    data_or_params:
+      tab: 0
+      page_number: 1
+      page_size: 10
+      trend_word: "网红狗艾特去世"
+  target_category: '9962'
+  expected_desc: '兽医师称：艾特是窒息死亡，与年纪或有没有病无关。'
+
+-
+  name: 网红狗艾特去世 -query不正确
+  request:
+    method: get
+    url: http://10.85.93.234:58881/api/big_hot
+    data_or_params:
+      tab: 0
+      page_number: 1
+      page_size: 10
+      trend_word: "网红狗艾特去世2"
+  target_category: '9962'
+  expected_desc: '兽医师称：艾特是窒息死亡，与年纪或有没有病无关。'
+
+-
+  name: 网红狗艾特去世 -query为空
+  request:
+    method: get
+    url: http://10.85.93.234:58881/api/big_hot
+    data_or_params:
+      tab: 0
+      page_number: 1
+      page_size: 10
+      trend_word:
+  target_category: '9962'
+  expected_desc: '兽医师称：艾特是窒息死亡，与年纪或有没有病无关。'

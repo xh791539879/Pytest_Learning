@@ -5,11 +5,15 @@
 """
 
 import requests
-class RequsetsUtil:
+
+
+def send_all_request(**kwargs):
+    res = RequestsUtil.sess.request(**kwargs)
+    print(res.text)
+    return res
+
+
+class RequestsUtil:
     sess = requests.session()
-    def send_all_request(self, **kwargs):
-        res = RequsetsUtil.sess.request(**kwargs)
-        print(res.text)
-        return res
 
 

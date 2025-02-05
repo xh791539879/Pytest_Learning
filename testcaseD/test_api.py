@@ -1,11 +1,8 @@
-﻿import json
-import re
+﻿import re
 
 import pytest
 import requests
-import yaml
-from common.requests_util import RequsetsUtil
-from common.common_util import Common_Util
+from common.requests_util import send_all_request
 from common.yaml_util import read_yaml, write_yaml
 
 
@@ -28,7 +25,7 @@ class TestApi():
         url = caseinfo['request']['url']
         data = caseinfo['request']['data']
         validate = caseinfo['validate']
-        response = RequsetsUtil().send_all_request(method=method,url=url,params=data) #通过导入common方法中的requests封装方法进行发送请求
+        response = send_all_request(method=method,url=url,params=data) #通过导入common方法中的requests封装方法进行发送请求
         # response = RequsetsUtil.sess.request()
         # print(response.text)
         if "tokenCode" in response.text:
@@ -46,7 +43,7 @@ class TestApi():
         url = caseinfo['request']['url']
         data = read_yaml('/extract.yaml')
         validate = caseinfo['validate']
-        response = RequsetsUtil().send_all_request(method=method, url=url, headers=data)
+        response = send_all_request(method=method, url=url, headers=data)
         assert validate == response.json()['respDesc']#断言JSON特定键的值
         # print(response.json())
 
@@ -60,7 +57,7 @@ class TestApi():
         for key,value in data.items():
             data[key] = open(value,"rb")
         validate = caseinfo['validate']
-        response = RequsetsUtil().send_all_request(method=method,url=url,headers=header,files=data)
+        response = send_all_request(method=method,url=url,headers=header,files=data)
         assert validate ==response.json()['success']
 
 

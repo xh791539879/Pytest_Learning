@@ -1,8 +1,10 @@
-﻿
+﻿import os
+from datetime import datetime
 
 import pytest
 from py.xml import html
 
+from common.log_util import LogUtil
 from common.yaml_util import clean_yaml
 
 # --------------------------------------------------------------------
@@ -17,9 +19,33 @@ from common.yaml_util import clean_yaml
 
 @pytest.hookimpl(optionalhook=True,tryfirst=True)
 def pytest_html_results_summary(prefix):
-    prefix.extend([html.p("所属部门: 大众云学测试中心")])
+    prefix.extend([html.p("所属部门: 测试")])
     prefix.extend([html.p("测试人员: xinhang")])
 # ------------------------------------------------------------------------
+
+
+@pytest.fixture(scope="session", autouse=True)
+def setup_logging(request):
+    test_name =request.node.name
+
+    timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    log_dir = "logs"
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+    log_file_name = os.path.join(log_dir, f"{test_name}-{timestamp}.log")
+
+    LogUtil.setup_logging(log_file_name)
+
+    LogUtil.info(test_name,"\n"+"="*80)
+    LogUtil.info(test_name,f"开始执行测试用例：{test_name}")
+    LogUtil.info(test_name,"="* 80 + "\n")
+
+
+    yield
+    LogUtil.info(test_name, "\n" + "=" * 80)
+    LogUtil.info(test_name, f"测试用例执行完毕: {test_name}")
+    LogUtil.info(test_name, "=" * 80 + "\n")
+
 
 
 
