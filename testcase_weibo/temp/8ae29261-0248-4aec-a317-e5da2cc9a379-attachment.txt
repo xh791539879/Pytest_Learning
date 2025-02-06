@@ -1,0 +1,5 @@
+INFO     root:log_util.py:39 日志配置完成,日志文件：logs\test.log
+INFO     root:log_util.py:62 [1]测试用例网红狗艾特去世,开始执行
+INFO     root:log_util.py:62 [2]请求方法：get,请求地址http://10.85.93.234:58881/api/big_hot?tab=0&page_number=1&page_size=10&trend_word=网红狗艾特去世,请求参数{'tab': 0, 'page_number': 1, 'page_size': 10, 'trend_word': '网红狗艾特去世'}）
+INFO     root:log_util.py:62 [3]测试用例网红狗艾特去世数据结构符合预期
+INFO     root:log_util.py:62 [4]测试用例网红狗艾特去世,执行成功

@@ -1,0 +1,9 @@
+INFO     root:log_util.py:43 日志配置完成,日志文件：logs\-20250206-154747.log
+INFO     root:log_util.py:69 [1]
+================================================================================
+INFO     root:log_util.py:69 [2]开始执行测试用例：
+INFO     root:log_util.py:69 [3]================================================================================
+INFO     TestWeiboRequests.网红狗艾特去世 -正例:log_util.py:69 [1]测试用例：网红狗艾特去世 -正例,开始执行
+INFO     TestWeiboRequests.网红狗艾特去世 -正例:log_util.py:69 [2]请求方法：get,请求地址http://10.85.93.234:58881/api/big_hot,请求参数{'tab': 0, 'page_number': 1, 'page_size': 10, 'trend_word': '网红狗艾特去世'}）
+INFO     TestWeiboRequests.网红狗艾特去世 -正例:log_util.py:69 [3]测试用例：网红狗艾特去世 -正例数据结构符合预期
+INFO     TestWeiboRequests.网红狗艾特去世 -正例:log_util.py:69 [4]测试用例：网红狗艾特去世 -正例,执行成功

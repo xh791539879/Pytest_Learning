@@ -1,0 +1,7 @@
+INFO     TestWeiboRequests.网红狗艾特去世 -query为空:log_util.py:69 [1]测试用例：网红狗艾特去世 -query为空,开始执行
+INFO     TestWeiboRequests.网红狗艾特去世 -query为空:log_util.py:69 [2]请求方法：get,请求地址http://10.85.93.234:58881/api/big_hot,请求参数{'tab': 0, 'page_number': 1, 'page_size': 10, 'trend_word': None}）
+ERROR    TestWeiboRequests.网红狗艾特去世 -query为空:log_util.py:77 [3]测试用例：网红狗艾特去世 -query为空异常，argument of type 'NoneType' is not iterable
+INFO     root:log_util.py:69 [4]
+================================================================================
+INFO     root:log_util.py:69 [5]测试用例执行完毕: 
+INFO     root:log_util.py:69 [6]================================================================================

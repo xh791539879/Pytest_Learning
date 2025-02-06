@@ -1,0 +1,7 @@
+INFO     root:log_util.py:11 日志配置已存在，跳过重复配置
+INFO     root:log_util.py:66 [6]
+
+INFO     root:log_util.py:66 [7]测试用例：网红狗艾特去世 -query不正确,开始执行
+INFO     root:log_util.py:66 [8]请求方法：get,请求地址http://10.85.93.234:58881/api/big_hot?tab=0&page_number=1&page_size=10&trend_word=网红狗艾特去世,请求参数{'tab': 0, 'page_number': 1, 'page_size': 10, 'trend_word': '网红狗艾特去世2'}）
+ERROR    root:log_util.py:70 [9]测试用例：网红狗艾特去世 -query不正确，测试失败:测试用例：网红狗艾特去世 -query不正确：数据结构不符合预期
+assert False

@@ -1,0 +1,5 @@
+INFO     root:log_util.py:11 日志配置已存在，跳过重复配置
+INFO     root:log_util.py:66 [8]测试用例：网红狗艾特去世 -query为空,开始执行
+INFO     root:log_util.py:66 [9]请求方法：get,请求地址http://10.85.93.234:58881/api/big_hot?tab=0&page_number=1&page_size=10&trend_word=网红狗艾特去世,请求参数{'tab': 0, 'page_number': 1, 'page_size': 10, 'trend_word': None}）
+INFO     root:log_util.py:66 [10]测试用例：网红狗艾特去世 -query为空数据结构符合预期
+INFO     root:log_util.py:66 [11]测试用例：网红狗艾特去世 -query为空,执行成功
